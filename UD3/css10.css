@@ -1,0 +1,29 @@
+
+/* Botón: resaltado */
+.boton:hover {
+background: #8B7CF0;
+}
+
+.espacio {
+  height: 100px;
+}
+
+/* Definición de la animación deslizar*/
+@keyframes deslizar {
+  from {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(200px);
+    opacity: 1;
+  }
+}
+
+/* Elemento deslizante */
+.cajanime {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  animation: deslizar 2s ease-out forwards;
+}
