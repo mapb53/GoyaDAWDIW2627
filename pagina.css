@@ -1,0 +1,97 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================================
+   El esqueleto completo de la página, directamente en el body
+   ========================================================== */
+body {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "cabecera cabecera"
+    "lateral  contenido"
+    "pie      pie";
+  min-height: 100vh;       /* el body ocupa al menos toda la pantalla */
+  gap: 16px;
+
+  margin: 0;
+  padding: 16px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color: #1f2933;
+}
+
+header { grid-area: cabecera; }
+aside  { grid-area: lateral; }
+main   { grid-area: contenido; }
+footer { grid-area: pie; }
+
+/* ==========================================================
+   Estilo visual de cada zona (nada de Grid aquí)
+   ========================================================== */
+header, aside, main, footer {
+  padding: 16px;
+  border-radius: 8px;
+}
+
+header { background: #1a365d; color: #ffffff; }
+aside  { background: #e9d8fd; }
+main   { background: #e6fffa; }
+footer { background: #4a5568; color: #ffffff; }
+
+h1, h2, p { margin: 0 0 0.4em; }
+
+/* tarjeta: solo estilo visual */
+.tarjeta {
+  padding: 12px;
+  border-radius: 6px;
+  background: #2c7a7b;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+}
+
+/* Botón: solo estilo visual */
+.boton {
+  padding: 12px;
+  width: 120px;
+  border-radius: 6px;
+  background: #4c9a6b;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+/* Botón: resaltado */
+.boton:hover {
+background: #8B7CF0;
+}
+
+.espacio {
+  height: 100px;
+}
+
+/* Definición de la animación deslizar*/
+@keyframes deslizar {
+  from {
+    transform: translateX(0px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(200px);
+    opacity: 1;
+  }
+}
+
+/* Elemento deslizante */
+.cajanime {
+  width: 100px;
+  height: 100px;
+  background-color: #3498db;
+  animation: deslizar 2s ease-out forwards;
+}
